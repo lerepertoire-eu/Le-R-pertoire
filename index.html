@@ -2,77 +2,90 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Le Répertoire</title>
+  <link rel="stylesheet" href="assets/styles.css" />
 </head>
-<body style="margin:0;font-family:'Helvetica Neue',Arial,sans-serif;background-color:#f8f8f8;color:#222;line-height:1.6;">
-  <div style="max-width:960px;margin:0 auto;padding:32px 20px;background-color:#ffffff;">
-    <header style="text-align:center;margin-bottom:32px;">
-      <h1 style="margin:0;font-size:2.5rem;letter-spacing:0.05em;">Le Répertoire</h1>
-      <p style="margin:12px 0 0;font-size:1.1rem;color:#555;">Guide européen — Smart / Core / Ultra</p>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="brand">Le Répertoire</div>
+      <div class="sub">Guide européen — Smart / Core / Ultra</div>
     </header>
-    <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
-    <section style="margin-bottom:24px;">
-      <h2 style="font-size:1.6rem;margin:0 0 12px;">Comment ça marche&nbsp;?</h2>
-      <article style="margin-bottom:16px;">
-        <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Smart</h3>
-        <p style="margin:0 0 8px;">Des adresses affûtées qui maximisent le rapport qualité/plaisir dans chaque ville. Deux phrases pour situer le niveau&nbsp;: service fiable, style recherché, addition maîtrisée.</p>
-      </article>
-      <article style="margin-bottom:16px;">
-        <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Core</h3>
-        <p style="margin:0 0 8px;">Les signatures locales où l’on revient les yeux fermés pour une expérience emblématique. Deux phrases pour ancrer le repère&nbsp;: ambiance juste, cuisine ou mixologie au cordeau, réservations recommandées.</p>
-      </article>
-      <article>
-        <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Ultra</h3>
-        <p style="margin:0;">Les icônes exclusives qui délivrent une émotion forte et un service au millimètre. Deux phrases pour cadrer le sommet&nbsp;: détails sur mesure, accès privilégié, moments à raconter.</p>
-      </article>
-    </section>
-    <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
-    <section style="margin-bottom:24px;">
-      <h2 style="font-size:1.6rem;margin:0 0 12px;">Formules / tags</h2>
-      <ul style="list-style:disc;padding-left:20px;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;">
-        <li style="margin:0;">ultra_luxe</li>
-        <li style="margin:0;">smart_luxury</li>
-        <li style="margin:0;">romantique</li>
-        <li style="margin:0;">teuf_vip</li>
-        <li style="margin:0;">business</li>
-        <li style="margin:0;">nature</li>
-        <li style="margin:0;">vue_wow</li>
-        <li style="margin:0;">ouvert_tard</li>
-      </ul>
-    </section>
-    <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
-    <section style="margin-bottom:24px;">
-      <h2 style="font-size:1.6rem;margin:0 0 12px;">Destinations pilotes</h2>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;">
-        <div style="background-color:#f2f2f2;padding:16px;border-radius:8px;">
-          <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Paris</h3>
-          <p style="margin:0;color:#333;">Capitale des contrastes, où les tables cultes et les bars cachés se conjuguent à chaque niveau Smart/Core/Ultra. Le Répertoire traque les quartiers inspirés pour des nuits romantiques, business ou VIP.</p>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h2 style="margin:0 0 10px">Comment ça marche ?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Smart</h3>
+          <p>Des adresses affûtées qui maximisent le rapport qualité/plaisir dans chaque ville. Service fiable, style recherché, addition maîtrisée.</p>
         </div>
-        <div style="background-color:#f2f2f2;padding:16px;border-radius:8px;">
-          <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Ibiza</h3>
-          <p style="margin:0;color:#333;">Île festive qui équilibre sunset chill et clubs d’élite, idéale pour les shortlists teuf_vip ou nature chic. Chaque recommandation articule plages confidentielles, afters sélectifs et hospitality experte.</p>
+        <div class="card">
+          <h3>Core</h3>
+          <p>Les signatures locales où l’on revient les yeux fermés pour une expérience emblématique. Réservations recommandées.</p>
         </div>
-        <div style="background-color:#f2f2f2;padding:16px;border-radius:8px;">
-          <h3 style="font-size:1.2rem;margin:0 0 8px;color:#444;">Zermatt</h3>
-          <p style="margin:0;color:#333;">Village alpin où les chalets design croisent les tables gastronomiques face au Cervin. Les niveaux Smart/Core/Ultra s’adaptent aux escapades ski-in, spas panoramiques et dîners signature.</p>
+        <div class="card">
+          <h3>Ultra</h3>
+          <p>Les icônes exclusives : détails sur mesure, accès privilégié, émotion forte. Pour ancrer le souvenir.</p>
         </div>
       </div>
     </section>
-    <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
-    <section style="margin-bottom:24px;">
-      <h2 style="font-size:1.6rem;margin:0 0 12px;">Exemples</h2>
-      <ul style="list-style:disc;padding-left:20px;margin:0;">
-        <li style="margin:0 0 8px;"><a href="examples/shortlist_paris_romantique.md" style="color:#0055cc;text-decoration:none;">examples/shortlist_paris_romantique.md</a></li>
-        <li style="margin:0 0 8px;"><a href="content/NEWSLETTER_TEMPLATE.md" style="color:#0055cc;text-decoration:none;">content/NEWSLETTER_TEMPLATE.md</a></li>
-        <li style="margin:0 0 8px;"><a href="admin/places_from_csv.html" style="color:#0055cc;text-decoration:none;">Admin — Liste depuis CSV</a></li>
+
+    <!-- Tags -->
+    <section class="section">
+      <h2>Formules / tags</h2>
+      <div class="tags">
+        <span class="tag">ultra_luxe</span><span class="tag">smart_luxury</span>
+        <span class="tag">romantique</span><span class="tag">teuf_vip</span>
+        <span class="tag">business</span><span class="tag">nature</span>
+        <span class="tag">vue_wow</span><span class="tag">ouvert_tard</span>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Destinations -->
+    <section class="section">
+      <h2>Destinations pilotes</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Paris</h3>
+          <p>Capitale des contrastes : tables cultes & bars cachés. Smart/Core/Ultra selon l’humeur.</p>
+        </div>
+        <div class="card">
+          <h3>Ibiza</h3>
+          <p>Sunset chill & clubs d’élite. Shortlists teuf_vip ou nature chic, au choix.</p>
+        </div>
+        <div class="card">
+          <h3>Zermatt</h3>
+          <p>Alpes design : spas panoramiques, dîners signature, vues Cervin.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr />
+
+    <!-- Exemples -->
+    <section class="section">
+      <h2>Exemples</h2>
+      <ul class="list">
+        <li><a href="examples/shortlist_paris_romantique.md">examples/shortlist_paris_romantique.md</a></li>
+        <li><a href="content/NEWSLETTER_TEMPLATE.md">content/NEWSLETTER_TEMPLATE.md</a></li>
+        <li><a href="admin/places_from_csv.html">Admin — Liste depuis CSV</a></li>
       </ul>
     </section>
-    <hr style="border:none;border-top:1px solid #ddd;margin:24px 0;" />
-    <section>
-      <h2 style="font-size:1.6rem;margin:0 0 12px;">Contact / Shortlist perso</h2>
-      <p style="margin:0;">Écrivez pour une shortlist personnalisée.</p>
+
+    <hr />
+
+    <!-- Contact -->
+    <section class="section">
+      <h2>Contact / Shortlist perso</h2>
+      <p>Écrivez pour une shortlist personnalisée.</p>
     </section>
+
+    <footer class="footer">© Le Répertoire — prototype éditorial (v0.1)</footer>
   </div>
 </body>
 </html>
