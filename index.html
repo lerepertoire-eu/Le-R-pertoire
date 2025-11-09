@@ -8,6 +8,9 @@
   <script src="assets/theme.js" defer></script>
 </head>
 <body>
+  <!-- Sprite d'icônes -->
+  <object data="assets/icons.svg" type="image/svg+xml" style="display:none"></object>
+
   <div class="container">
     <header class="header">
       <div>
@@ -19,24 +22,26 @@
         <a href="destinations.html">Destinations</a>
         <a href="about.html">À propos</a>
         <a href="methodo.html">Méthodo</a>
+        <a href="newsletter.html">Newsletter</a>
         <a href="contact.html">Contact</a>
-        <span class="toggle" onclick="__lrToggleTheme()">◐</span>
+        <a class="icon-btn" href="javascript:void(0)" onclick="__lrToggleTheme()" title="Mode sombre/clair">
+          <span class="icon"><svg><use href="assets/icons.svg#icon-moon"></use></svg></span>◐
+        </a>
       </nav>
     </header>
 
+    <!-- Hero : ajoute la classe 'visual' si tu poses assets/hero.jpg -->
     <section class="hero">
+      <span class="kicker">Éditorial indépendant</span>
       <h1>Capsules sur-mesure. Éditorial inspirant.</h1>
       <p>Une sélection soignée de lieux et d’itinéraires — Smart, Core, Ultra — pensée pour transformer un séjour en œuvre mémorable.</p>
       <p style="margin-top:16px"><a class="cta" href="destinations.html">Découvrir nos capsules</a></p>
     </section>
 
-    <section class="section">
-      <h2>Destinations pilotes</h2>
-      <div class="grid">
-        <div class="card"><h3>Paris</h3><p>Tables cultes & bars cachés. Smart/Core/Ultra selon l’humeur.</p></div>
-        <div class="card"><h3>Ibiza</h3><p>Sunset chill & clubs d’élite. Teuf VIP ou nature chic.</p></div>
-        <div class="card"><h3>Zermatt</h3><p>Alpes design : spas panoramiques & dîners signature.</p></div>
-      </div>
+    <!-- Capsules (3 vignettes auto depuis seed.sample.json) -->
+    <section class="section capsules">
+      <h2>Nos capsules</h2>
+      <div class="grid" id="capsules"></div>
     </section>
 
     <section class="section">
@@ -50,5 +55,7 @@
 
     <footer class="footer">© 2025 Le Répertoire — Sélection éditoriale indépendante · hello@lerepertoire.com</footer>
   </div>
+
+  <script src="assets/capsules.js"></script>
 </body>
 </html>
