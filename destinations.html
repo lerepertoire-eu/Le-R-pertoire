@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Destinations — Le Répertoire</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div>
+        <div class="brand">Le Répertoire</div>
+        <div class="sub">Destinations & lieux</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="admin/places_from_csv.html">Admin</a>
+      </nav>
+    </header>
+
+    <section class="section">
+      <h2>Explorer</h2>
+      <div class="controls">
+        <select id="destSelect" aria-label="Destination">
+          <option value="">Toutes destinations</option>
+          <option value="paris">Paris</option>
+          <option value="ibiza">Ibiza</option>
+          <option value="zermatt">Zermatt</option>
+        </select>
+
+        <select id="levelSelect" aria-label="Niveau">
+          <option value="">Tous niveaux</option>
+          <option value="smart">Smart</option>
+          <option value="core">Core</option>
+          <option value="ultra">Ultra</option>
+        </select>
+
+        <input id="q" type="search" placeholder="Recherche (nom, pitch, tags)" />
+        <button class="btn primary" id="apply">Filtrer</button>
+        <span class="badge" id="count">0 lieu</span>
+      </div>
+
+      <div class="grid" id="cards"></div>
+    </section>
+
+    <footer class="footer">© Le Répertoire</footer>
+  </div>
+
+  <script src="assets/listing.js"></script>
+</body>
+</html>
