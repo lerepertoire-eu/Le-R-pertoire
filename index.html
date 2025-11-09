@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Le Répertoire — Des séjours conçus comme des œuvres</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <meta name="description" content="Sélection éditoriale indépendante de capsules Smart • Core • Ultra pour des séjours conçus comme des œuvres." />
   <script src="assets/theme.js" defer></script>
 </head>
 <body>
@@ -12,41 +14,46 @@
   <object data="assets/icons.svg" type="image/svg+xml" style="display:none"></object>
 
   <div class="container">
-   <header class="header">
-  <div class="brand-row">
-    <div class="logo">LR</div>
-    <div>
-      <div class="brand">Le Répertoire</div>
-      <div class="sub">Des séjours conçus comme des œuvres</div>
-    </div>
-  </div>
-  <nav class="nav">
-    <a class="active" href="index.html">Accueil</a>
-    <a href="destinations.html">Destinations</a>
-    <a href="about.html">À propos</a>
-    <a href="methodo.html">Méthodo</a>
-    <a href="newsletter.html">Newsletter</a>
-    <a href="contact.html">Contact</a>
-    <a class="icon-btn" href="javascript:void(0)" onclick="__lrToggleTheme()" title="Mode sombre/clair">
-      <span class="icon"><svg><use href="assets/icons.svg#icon-moon"></use></svg></span>◐
-    </a>
-  </nav>
-</header>
+    <!-- HEADER (sans logo carré, lien actif souligné + bordure beige) -->
+    <header class="header">
+      <div class="brand-row">
+        <div>
+          <div class="brand">Le Répertoire</div>
+          <div class="sub">Des séjours conçus comme des œuvres</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="index.html">Accueil</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="about.html">À propos</a>
+        <a href="methodo.html">Méthodo</a>
+        <a href="newsletter.html">Newsletter</a>
+        <a href="contact.html">Contact</a>
+        <a class="icon-btn" href="javascript:void(0)" onclick="__lrToggleTheme()" title="Mode sombre/clair" aria-label="Basculer le thème">
+          ◐
+        </a>
+      </nav>
+    </header>
 
-    <!-- Hero : ajoute la classe 'visual' si tu poses assets/hero.jpg -->
-    <section class="hero">
-      <span class="kicker">Éditorial indépendant</span>
-      <h1>Capsules sur-mesure. Éditorial inspirant.</h1>
-      <p>Une sélection soignée de lieux et d’itinéraires — Smart, Core, Ultra — pensée pour transformer un séjour en œuvre mémorable.</p>
-      <p style="margin-top:16px"><a class="cta" href="destinations.html">Découvrir nos capsules</a></p>
+    <!-- HERO (image plein large + voile beige + fade-in) -->
+<!-- Pour activer l’image : upload assets/hero.jpg (ou laisse le dégradé discret) -->
+    <section class="hero visual">
+      <div class="hero-inner">
+        <span class="kicker">Éditorial indépendant</span>
+        <h1 class="fade-up">Capsules sur-mesure. Éditorial inspirant.</h1>
+        <p class="fade-up delay1">Une sélection soignée de lieux et d’itinéraires — Smart, Core, Ultra — pensée pour transformer un séjour en œuvre mémorable.</p>
+        <p class="fade-up delay2"><a class="cta emph" href="destinations.html">Découvrir nos capsules</a></p>
+      </div>
     </section>
 
-    <!-- Capsules (3 vignettes auto depuis seed.sample.json) -->
-    <section class="section capsules">
+    <!-- CAPSULES (cartes visuelles, hover zoom, fond papier) -->
+    <section class="section capsules section-paper">
       <h2>Nos capsules</h2>
-      <div class="grid" id="capsules"></div>
+      <div class="grid grid-caps" id="capsules"></div>
     </section>
 
+    <!-- (Tu peux enlever toute la section Exemples si tu veux) -->
+    <!--
     <section class="section">
       <h2>Exemples</h2>
       <ul class="list">
@@ -55,19 +62,29 @@
         <li><a href="newsletters/2025-11-09.md">Le Carnet du Répertoire — #0</a></li>
       </ul>
     </section>
+    -->
 
-<footer class="footer">
-  © 2025 Le Répertoire — Sélection éditoriale indépendante ·
-  <a href="mailto:hello@lerepertoire.com">hello@lerepertoire.com</a>
-  ·
-  <a href="https://instagram.com/lerepertoire" target="_blank" rel="noopener" class="icon-btn" style="margin-left:6px">
-    <span class="icon"><svg><use href="assets/icons.svg#icon-instagram"></use></svg></span>Instagram
-  </a>
-  ·
-  <a href="https://tiktok.com/@lerepertoire" target="_blank" rel="noopener" class="icon-btn" style="margin-left:6px">
-    <span class="icon"><svg><use href="assets/icons.svg#icon-tiktok"></use></svg></span>TikTok
-  </a>
-</footer>
+    <!-- FOOTER (gauche : © / droite : réseaux, fond beige clair) -->
+    <footer class="site-footer">
+      <div class="footer-row">
+        <div class="footer-left">
+          <strong>Le Répertoire</strong> · © 2025 — Sélection éditoriale indépendante
+        </div>
+        <div class="footer-right">
+          <a href="mailto:hello@lerepertoire.com" class="footer-link">hello@lerepertoire.com</a>
+          <a href="https://instagram.com/lerepertoire" target="_blank" rel="noopener" class="social">
+            <span class="icon-24">
+              <svg><use href="assets/icons.svg#icon-instagram"></use></svg>
+            </span>
+          </a>
+          <a href="https://tiktok.com/@lerepertoire" target="_blank" rel="noopener" class="social">
+            <span class="icon-24">
+              <svg><use href="assets/icons.svg#icon-tiktok"></use></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script src="assets/capsules.js"></script>
