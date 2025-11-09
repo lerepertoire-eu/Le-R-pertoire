@@ -3,65 +3,52 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Le Répertoire</title>
+  <title>Le Répertoire — Des séjours conçus comme des œuvres</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js" defer></script>
 </head>
 <body>
   <div class="container">
     <header class="header">
       <div>
         <div class="brand">Le Répertoire</div>
-        <div class="sub">Guide européen — Smart / Core / Ultra</div>
+        <div class="sub">Des séjours conçus comme des œuvres</div>
       </div>
       <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="destinations.html">Destinations</a>
-        <a href="admin/places_from_csv.html">Admin</a>
+        <a href="about.html">À propos</a>
+        <a href="methodo.html">Méthodo</a>
+        <a href="contact.html">Contact</a>
+        <span class="toggle" onclick="__lrToggleTheme()">◐</span>
       </nav>
     </header>
 
     <section class="hero">
-      <h2 style="margin:0 0 10px">Comment ça marche ?</h2>
-      <div class="grid">
-        <div class="card"><h3>Smart</h3><p>Rapport qualité/plaisir maximal, service fiable, style recherché.</p></div>
-        <div class="card"><h3>Core</h3><p>Signatures locales emblématiques. Réservations recommandées.</p></div>
-        <div class="card"><h3>Ultra</h3><p>Icônes exclusives, accès privilégié, émotion forte.</p></div>
-      </div>
+      <h1>Capsules sur-mesure. Éditorial inspirant.</h1>
+      <p>Une sélection soignée de lieux et d’itinéraires — Smart, Core, Ultra — pensée pour transformer un séjour en œuvre mémorable.</p>
+      <p style="margin-top:16px"><a class="cta" href="destinations.html">Découvrir nos capsules</a></p>
     </section>
-
-    <section class="section">
-      <h2>Formules / tags</h2>
-      <div class="tags">
-        <span class="tag">ultra_luxe</span><span class="tag">smart_luxury</span>
-        <span class="tag">romantique</span><span class="tag">teuf_vip</span>
-        <span class="tag">business</span><span class="tag">nature</span>
-        <span class="tag">vue_wow</span><span class="tag">ouvert_tard</span>
-      </div>
-    </section>
-
-    <hr />
 
     <section class="section">
       <h2>Destinations pilotes</h2>
       <div class="grid">
         <div class="card"><h3>Paris</h3><p>Tables cultes & bars cachés. Smart/Core/Ultra selon l’humeur.</p></div>
-        <div class="card"><h3>Ibiza</h3><p>Sunset chill & clubs d’élite. Teuf_vip ou nature chic.</p></div>
+        <div class="card"><h3>Ibiza</h3><p>Sunset chill & clubs d’élite. Teuf VIP ou nature chic.</p></div>
         <div class="card"><h3>Zermatt</h3><p>Alpes design : spas panoramiques & dîners signature.</p></div>
       </div>
     </section>
 
-    <hr />
-
     <section class="section">
       <h2>Exemples</h2>
       <ul class="list">
-        <li><a href="examples/shortlist_paris_romantique.md">Shortlist — Paris romantique</a></li>
+        <li><a href="admin/places_from_csv.html">Admin — Liste depuis CSV</a></li>
         <li><a href="content/NEWSLETTER_TEMPLATE.md">Newsletter — Template</a></li>
-        <li><a href="newsletters/2025-11-09.md">Newsletter #0</a></li>
+        <li><a href="newsletters/2025-11-09.md">Le Carnet du Répertoire — #0</a></li>
       </ul>
     </section>
 
-    <footer class="footer">© Le Répertoire — prototype éditorial (v0.1)</footer>
+    <footer class="footer">© 2025 Le Répertoire — Sélection éditoriale indépendante · hello@lerepertoire.com</footer>
   </div>
 </body>
 </html>
