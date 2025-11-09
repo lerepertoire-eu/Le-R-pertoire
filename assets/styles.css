@@ -1,12 +1,12 @@
+/* assets/styles.css */
 /* === Fonts (Playfair + Inter) === */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
 
-/* === Theme tokens === */
+/* === Theme tokens (magazine) === */
 :root{
-  /* Light magazine */
-  --bg:#f4f1ec;            /* page */
-  --surface:#ffffff;       /* surfaces */
-  --paper:#f8f7f5;         /* papier doux (sections) */
+  --bg:#f4f1ec;
+  --surface:#ffffff;
+  --paper:#f8f7f5;
   --card:#ffffff;
   --ink:#1b1d22;
   --muted:#6c707a;
@@ -15,15 +15,12 @@
   --accent-2:#b5965a;      /* doré discret */
   --chip:#efe8db; --chip-border:#e2d7c4;
 
-  /* Buttons/clés */
-  --btn:#111;              /* clair : bouton principal noir */
+  --btn:#111;              /* clair : bouton noir */
   --btn-ink:#f4f1ec;
 
-  /* FX */
   --shadow: 0 10px 24px rgba(0,0,0,.08);
 }
 [data-theme="dark"]{
-  /* Dark premium magazine */
   --bg:#1a1a1a;
   --surface:#222325;
   --paper:#1f1f1f;
@@ -35,7 +32,7 @@
   --accent-2:#d2b886;
   --chip:#2a2b2d; --chip-border:#3a3c3f;
 
-  --btn:#e4d6c6;          /* boutons beige clair en sombre */
+  --btn:#e4d6c6;          /* sombre : bouton beige clair */
   --btn-ink:#1b1d22;
 
   --shadow: 0 10px 28px rgba(0,0,0,.35);
@@ -55,25 +52,60 @@ h1,h2,h3{font-family:"Playfair Display", serif;color:var(--ink)}
 a{color:var(--accent);text-decoration:none;transition: color .25s ease, background-color .25s ease, border-color .25s ease}
 a:hover{text-decoration:underline}
 
-/* === Layout === */
-.container{max-width:1200px;margin:0 auto;padding:0 20px}
-
-/* Header */
-.header{
-  position:sticky; top:0; z-index:50;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:16px 0;
+/* ===== Header “Vogue-like” ===== */
+.vf-header{
+  position:sticky; top:0; z-index:70;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
   backdrop-filter:saturate(140%) blur(6px);
-  background:color-mix(in oklab, var(--bg) 85%, transparent);
-  border-bottom:1px solid var(--line); /* bordure beige clair */
 }
-.brand{font-family:"Playfair Display",serif;font-weight:600;letter-spacing:.2px;font-size:28px}
-.sub{color:var(--muted);margin-top:2px;font-size:13px}
-.nav a{color:var(--muted);margin-left:16px;padding-bottom:6px;border-bottom:2px solid transparent}
-.nav a:hover{color:var(--ink)}
-.nav a.active{color:var(--ink);border-bottom-color:var(--accent-2)} /* soulignement actif */
-.icon-btn{display:inline-flex;align-items:center;gap:6px;margin-left:12px;color:var(--muted)}
-.icon-btn:hover{color:var(--ink)}
+[data-theme="dark"] .vf-header{ background:var(--surface); }
+
+.vf-top{
+  max-width:1200px; margin:0 auto;
+  height:72px; display:grid; align-items:center;
+  grid-template-columns: 56px 1fr 1fr;
+  padding:0 16px;
+}
+.vf-logo{ justify-self:center; display:inline-flex; align-items:center; }
+.vf-logo img{ height:42px; width:auto; display:block; }
+@media (max-width:640px){
+  .vf-top{ height:64px; grid-template-columns: 44px 1fr 1fr; }
+  .vf-logo img{ height:36px; }
+}
+
+.burger{
+  width:44px;height:44px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);margin:2px 0}
+[data-theme="dark"] .burger span{background:var(--ink)}
+
+.vf-actions{ justify-self:end; display:flex; align-items:center; gap:14px; }
+.vf-link{color:var(--ink); font-size:14px}
+.vf-link:hover{text-decoration:underline}
+.sep{color:var(--muted)}
+.vf-actions .icon-btn{
+  color:var(--ink); padding:6px 8px;
+  border:1px solid var(--line); border-radius:10px; background:var(--surface)
+}
+.vf-actions .icon-btn:hover{background:color-mix(in oklab, var(--surface) 80%, var(--paper) 20%)}
+
+.vf-nav{ border-top:1px solid var(--line); }
+.vf-nav ul{
+  margin:0; padding:0; list-style:none;
+  display:flex; gap:26px; justify-content:center;
+  height:48px; align-items:center;
+}
+.vf-nav a{
+  color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:12px;
+  padding-bottom:6px; border-bottom:2px solid transparent;
+}
+.vf-nav a:hover{ border-bottom-color:var(--line); text-decoration:none }
+.vf-nav a.active{ border-bottom-color:var(--accent); }
+
+/* === Layout container === */
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
 
 /* === Hero === */
 .hero{
@@ -85,23 +117,26 @@ a:hover{text-decoration:underline}
   min-height:320px;
 }
 .hero.visual{
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.00), rgba(0,0,0,.00));
-  /* image optionnelle : assets/hero.jpg */
-  background-image: url("assets/hero.jpg");
-  background-size: cover; background-position:center;
+  background-image: url("assets/hero.jpg"); /* mets l’image dans assets/hero.jpg */
+  background-size:cover; background-position:center;
 }
 .hero.visual::before{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(0deg, rgba(244,241,236,.38), rgba(244,241,236,.38));
+  background:linear-gradient(0deg, rgba(244,241,236,.38), rgba(244,241,236,.38)); /* voile beige clair */
 }
-.hero-inner{
-  position:relative; z-index:1;
-  padding:48px 28px; max-width:760px;
-}
+.hero-inner{ position:relative; z-index:1; padding:48px 28px; max-width:760px; }
 .hero .kicker{letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--muted);margin-bottom:6px}
 .hero h1{margin:0 0 10px;font-size:40px}
 .hero p{margin:0 0 14px;color:var(--muted)}
+
+/* Filigrane optionnel (logo discret) */
+.hero .hero-mark{
+  position:absolute; inset:0; pointer-events:none;
+  background: center/220px auto no-repeat;
+  opacity:.06; mix-blend-mode:multiply;
+  background-image: url('assets/logo.png');
+}
+[data-theme="dark"] .hero .hero-mark{ opacity:.08; filter:brightness(1.15); }
 
 /* Animations */
 @keyframes fadeUp{from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)}}
@@ -129,7 +164,6 @@ a:hover{text-decoration:underline}
   padding:18px;
 }
 
-/* Grid capsules : cartes visuelles */
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
 .grid-caps .card{
   padding:0; overflow:hidden; border-radius:16px;
@@ -144,28 +178,21 @@ a:hover{text-decoration:underline}
 .badge{font-size:12px;color:var(--ink);background:var(--chip);border:1px solid var(--chip-border);border-radius:999px;padding:4px 8px}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
 
-/* Bouton inline avec icône (si utilisé) */
+/* Bouton inline (si utilisé) */
 .btn.inline{
   display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;background:var(--btn);color:var(--btn-ink)
 }
 .btn.inline svg{width:16px;height:16px}
 
-/* Gallery (Fiche) – (préservé si utilisé ailleurs) */
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin:12px 0}
-.gallery img{width:100%;height:140px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-
-/* Footer (magazine, fond beige clair, réseaux à droite) */
+/* Footer */
 .site-footer{
-  background:var(--paper);
+  background:var(--surface);
   border-top:1px solid var(--line);
   margin:36px 0 0;
 }
-.footer-row{
-  display:flex; justify-content:space-between; align-items:center;
-  padding:24px 0;
-  color:#666;
-}
-.footer-left{font-size:14px}
+.footer-row{display:flex; justify-content:space-between; align-items:center; padding:24px 0; color:#666}
+.footer-left{display:flex;align-items:center;gap:10px;font-size:14px}
+.footer-logo{height:24px;width:auto;display:block;opacity:.95}
 .footer-right{display:flex;align-items:center;gap:14px}
 .footer-link{color:#666}
 .footer-link:hover{color:var(--ink)}
@@ -180,75 +207,7 @@ a:hover{text-decoration:underline}
   .grid-caps .thumb{height:200px}
 }
 
-/* ===== (Ancien styles utiles conservés) ===== */
-.select,input[type="search"],.btn{
-  background:var(--card);border:1px solid var(--line);color:var(--ink);
-  padding:10px 12px;border-radius:10px;font:inherit
-}
-/* Option : étoiles si utilisées ailleurs */
+/* Étoiles (si besoin ailleurs) */
 .stars{display:inline-flex;gap:2px;vertical-align:middle}
 .star{width:14px;height:14px;color:var(--accent-2)}
 .star svg{width:14px;height:14px}
-/* ===== Header “Vogue-like” ===== */
-.vf-header{
-  position:sticky; top:0; z-index:70;
-  background:var(--surface);
-  border-bottom:1px solid var(--line);
-  backdrop-filter:saturate(140%) blur(6px);
-}
-[data-theme="dark"] .vf-header{ background:var(--surface); }
-
-/* Top bar */
-.vf-top{
-  max-width:1200px; margin:0 auto;
-  height:72px; display:grid; align-items:center;
-  grid-template-columns: 56px 1fr 1fr;
-  padding:0 16px;
-}
-.vf-logo{
-  justify-self:center; display:inline-flex; align-items:center;
-}
-.vf-logo img{
-  height:42px; width:auto; display:block;
-}
-@media (max-width:640px){
-  .vf-top{ height:64px; grid-template-columns: 44px 1fr 1fr; }
-  .vf-logo img{ height:36px; }
-}
-
-/* Burger */
-.burger{
-  width:44px;height:44px;border:1px solid var(--line);border-radius:10px;
-  background:var(--surface);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
-}
-.burger span{display:block;width:18px;height:2px;background:var(--ink);margin:2px 0}
-[data-theme="dark"] .burger span{background:var(--ink)}
-
-/* Actions à droite */
-.vf-actions{
-  justify-self:end; display:flex; align-items:center; gap:14px;
-}
-.vf-link{color:var(--ink); font-size:14px}
-.vf-link:hover{text-decoration:underline}
-.sep{color:var(--muted)}
-.vf-actions .icon-btn{color:var(--ink); padding:6px 8px; border:1px solid var(--line); border-radius:10px; background:var(--surface)}
-.vf-actions .icon-btn:hover{background:color-mix(in oklab, var(--surface) 80%, var(--paper) 20%)}
-
-/* Barre de navigation (catégories) */
-.vf-nav{
-  border-top:1px solid var(--line);
-}
-.vf-nav ul{
-  margin:0; padding:0; list-style:none;
-  display:flex; gap:26px; justify-content:center;
-  height:48px; align-items:center;
-}
-.vf-nav a{
-  color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:12px;
-  padding-bottom:6px; border-bottom:2px solid transparent;
-}
-.vf-nav a:hover{ border-bottom-color:var(--line); text-decoration:none }
-.vf-nav a.active{ border-bottom-color:var(--accent); }
-
-/* Ajustement container (header full-bleed) */
-.container{ padding-top:0 }
