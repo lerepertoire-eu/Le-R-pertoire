@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Contact — Le Répertoire</title><link rel="stylesheet" href="assets/styles.css"/><script src="assets/theme.js" defer></script></head>
+<body><div class="container">
+  <header class="header">
+    <div><div class="brand">Le Répertoire</div><div class="sub">Contact</div></div>
+    <nav class="nav"><a href="index.html">Accueil</a><a href="destinations.html">Destinations</a><a href="about.html">À propos</a><a href="methodo.html">Méthodo</a><a href="contact.html">Contact</a><span class="toggle" onclick="__lrToggleTheme()">◐</span></nav>
+  </header>
+  <section class="section">
+    <h1>Nous écrire</h1>
+    <p>Pour une capsule personnalisée ou une question : <a href="mailto:hello@lerepertoire.com">hello@lerepertoire.com</a></p>
+    <div class="card">
+      <form onsubmit="location.href='mailto:hello@lerepertoire.com?subject=' + encodeURIComponent('Contact — Le Répertoire') + '&body=' + encodeURIComponent(document.getElementById('m').value); return false;">
+        <div style="display:grid;gap:10px;grid-template-columns:1fr 1fr">
+          <input id="n" placeholder="Nom" required />
+          <input id="e" type="email" placeholder="Email" required />
+        </div>
+        <textarea id="m" placeholder="Votre message" rows="6" style="margin-top:10px;width:100%"></textarea>
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <button class="btn primary" type="submit">Envoyer</button>
+          <a class="btn" href="mailto:hello@lerepertoire.com">Écrire avec mon client mail</a>
+        </div>
+      </form>
+    </div>
+    <div class="tags" style="margin-top:12px"><span class="tag">Instagram</span><span class="tag">TikTok</span></div>
+  </section>
+  <footer class="footer">© 2025 Le Répertoire — Sélection éditoriale indépendante</footer>
+</div></body></html>
