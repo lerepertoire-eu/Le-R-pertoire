@@ -14,26 +14,47 @@
   <object data="assets/icons.svg" type="image/svg+xml" style="display:none"></object>
 
   <div class="container">
-    <!-- HEADER (sans logo carré, lien actif souligné + bordure beige) -->
-    <header class="header">
-      <div class="brand-row">
-        <div>
-          <div class="brand">Le Répertoire</div>
-          <div class="sub">Des séjours conçus comme des œuvres</div>
-        </div>
-      </div>
-      <nav class="nav">
-        <a class="active" href="index.html">Accueil</a>
-        <a href="destinations.html">Destinations</a>
-        <a href="about.html">À propos</a>
-        <a href="methodo.html">Méthodo</a>
-        <a href="newsletter.html">Newsletter</a>
-        <a href="contact.html">Contact</a>
-        <a class="icon-btn" href="javascript:void(0)" onclick="__lrToggleTheme()" title="Mode sombre/clair" aria-label="Basculer le thème">
-          ◐
-        </a>
-      </nav>
-    </header>
+   <header class="vf-header">
+  <!-- Topbar -->
+  <div class="vf-top">
+    <!-- Burger (gauche) -->
+    <button class="burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Logo centré -->
+    <a class="vf-logo" href="index.html" aria-label="Le Répertoire">
+      <img src="assets/logo.png" alt="Le Répertoire" />
+    </a>
+
+    <!-- Actions (droite) -->
+    <div class="vf-actions">
+      <a class="vf-link" href="newsletter.html">Newsletter</a>
+      <span class="sep">|</span>
+      <a class="vf-link" href="contact.html">Se connecter</a>
+      <button class="icon-btn" onclick="__lrToggleTheme()" title="Mode sombre/clair" aria-label="Basculer le thème">◐</button>
+      <button class="icon-btn" aria-label="Recherche" title="Recherche">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <line x1="16.5" y1="16.5" x2="22" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Barre de navigation (catégories) -->
+  <nav class="vf-nav">
+    <ul>
+      <li><a class="active" href="index.html">Accueil</a></li>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="fiches.html">Fiches</a></li>
+      <li><a href="about.html">À propos</a></li>
+      <li><a href="methodo.html">Méthodo</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
 
     <!-- HERO (image plein large + voile beige + fade-in) -->
 <!-- Pour activer l’image : upload assets/hero.jpg (ou laisse le dégradé discret) -->
