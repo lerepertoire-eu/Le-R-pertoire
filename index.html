@@ -4,90 +4,61 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Le Répertoire</title>
-  <!-- Feuille de style (assure-toi d’avoir créé assets/styles.css) -->
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Header -->
     <header class="header">
-      <div class="brand">Le Répertoire</div>
-      <div class="sub">Guide européen — Smart / Core / Ultra</div>
+      <div>
+        <div class="brand">Le Répertoire</div>
+        <div class="sub">Guide européen — Smart / Core / Ultra</div>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Accueil</a>
+        <a href="destinations.html">Destinations</a>
+        <a href="admin/places_from_csv.html">Admin</a>
+      </nav>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
       <h2 style="margin:0 0 10px">Comment ça marche ?</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Smart</h3>
-          <p>Des adresses affûtées qui maximisent le rapport qualité/plaisir dans chaque ville. Service fiable, style recherché, addition maîtrisée.</p>
-        </div>
-        <div class="card">
-          <h3>Core</h3>
-          <p>Les signatures locales où l’on revient les yeux fermés pour une expérience emblématique. Réservations recommandées.</p>
-        </div>
-        <div class="card">
-          <h3>Ultra</h3>
-          <p>Icônes exclusives : détails sur mesure, accès privilégié, émotion forte. Pour ancrer le souvenir.</p>
-        </div>
+        <div class="card"><h3>Smart</h3><p>Rapport qualité/plaisir maximal, service fiable, style recherché.</p></div>
+        <div class="card"><h3>Core</h3><p>Signatures locales emblématiques. Réservations recommandées.</p></div>
+        <div class="card"><h3>Ultra</h3><p>Icônes exclusives, accès privilégié, émotion forte.</p></div>
       </div>
     </section>
 
-    <!-- Tags -->
     <section class="section">
       <h2>Formules / tags</h2>
       <div class="tags">
-        <span class="tag">ultra_luxe</span>
-        <span class="tag">smart_luxury</span>
-        <span class="tag">romantique</span>
-        <span class="tag">teuf_vip</span>
-        <span class="tag">business</span>
-        <span class="tag">nature</span>
-        <span class="tag">vue_wow</span>
-        <span class="tag">ouvert_tard</span>
+        <span class="tag">ultra_luxe</span><span class="tag">smart_luxury</span>
+        <span class="tag">romantique</span><span class="tag">teuf_vip</span>
+        <span class="tag">business</span><span class="tag">nature</span>
+        <span class="tag">vue_wow</span><span class="tag">ouvert_tard</span>
       </div>
     </section>
 
     <hr />
 
-    <!-- Destinations -->
     <section class="section">
       <h2>Destinations pilotes</h2>
       <div class="grid">
-        <div class="card">
-          <h3>Paris</h3>
-          <p>Capitale des contrastes : tables cultes & bars cachés. Smart/Core/Ultra selon l’humeur.</p>
-        </div>
-        <div class="card">
-          <h3>Ibiza</h3>
-          <p>Sunset chill & clubs d’élite. Shortlists teuf_vip ou nature chic, au choix.</p>
-        </div>
-        <div class="card">
-          <h3>Zermatt</h3>
-          <p>Alpes design : spas panoramiques, dîners signature, vues Cervin.</p>
-        </div>
+        <div class="card"><h3>Paris</h3><p>Tables cultes & bars cachés. Smart/Core/Ultra selon l’humeur.</p></div>
+        <div class="card"><h3>Ibiza</h3><p>Sunset chill & clubs d’élite. Teuf_vip ou nature chic.</p></div>
+        <div class="card"><h3>Zermatt</h3><p>Alpes design : spas panoramiques & dîners signature.</p></div>
       </div>
     </section>
 
     <hr />
 
-    <!-- Exemples -->
     <section class="section">
       <h2>Exemples</h2>
       <ul class="list">
-        <li><a href="examples/shortlist_paris_romantique.md">examples/shortlist_paris_romantique.md</a></li>
-        <li><a href="content/NEWSLETTER_TEMPLATE.md">content/NEWSLETTER_TEMPLATE.md</a></li>
-        <li><a href="admin/places_from_csv.html">Admin — Liste depuis CSV</a></li>
+        <li><a href="examples/shortlist_paris_romantique.md">Shortlist — Paris romantique</a></li>
+        <li><a href="content/NEWSLETTER_TEMPLATE.md">Newsletter — Template</a></li>
+        <li><a href="newsletters/2025-11-09.md">Newsletter #0</a></li>
       </ul>
-    </section>
-
-    <hr />
-
-    <!-- Contact -->
-    <section class="section">
-      <h2>Contact / Shortlist perso</h2>
-      <p>Écrivez pour une shortlist personnalisée.</p>
     </section>
 
     <footer class="footer">© Le Répertoire — prototype éditorial (v0.1)</footer>
