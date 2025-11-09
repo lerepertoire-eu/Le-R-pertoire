@@ -189,3 +189,66 @@ a:hover{text-decoration:underline}
 .stars{display:inline-flex;gap:2px;vertical-align:middle}
 .star{width:14px;height:14px;color:var(--accent-2)}
 .star svg{width:14px;height:14px}
+/* ===== Header “Vogue-like” ===== */
+.vf-header{
+  position:sticky; top:0; z-index:70;
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(140%) blur(6px);
+}
+[data-theme="dark"] .vf-header{ background:var(--surface); }
+
+/* Top bar */
+.vf-top{
+  max-width:1200px; margin:0 auto;
+  height:72px; display:grid; align-items:center;
+  grid-template-columns: 56px 1fr 1fr;
+  padding:0 16px;
+}
+.vf-logo{
+  justify-self:center; display:inline-flex; align-items:center;
+}
+.vf-logo img{
+  height:42px; width:auto; display:block;
+}
+@media (max-width:640px){
+  .vf-top{ height:64px; grid-template-columns: 44px 1fr 1fr; }
+  .vf-logo img{ height:36px; }
+}
+
+/* Burger */
+.burger{
+  width:44px;height:44px;border:1px solid var(--line);border-radius:10px;
+  background:var(--surface);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+}
+.burger span{display:block;width:18px;height:2px;background:var(--ink);margin:2px 0}
+[data-theme="dark"] .burger span{background:var(--ink)}
+
+/* Actions à droite */
+.vf-actions{
+  justify-self:end; display:flex; align-items:center; gap:14px;
+}
+.vf-link{color:var(--ink); font-size:14px}
+.vf-link:hover{text-decoration:underline}
+.sep{color:var(--muted)}
+.vf-actions .icon-btn{color:var(--ink); padding:6px 8px; border:1px solid var(--line); border-radius:10px; background:var(--surface)}
+.vf-actions .icon-btn:hover{background:color-mix(in oklab, var(--surface) 80%, var(--paper) 20%)}
+
+/* Barre de navigation (catégories) */
+.vf-nav{
+  border-top:1px solid var(--line);
+}
+.vf-nav ul{
+  margin:0; padding:0; list-style:none;
+  display:flex; gap:26px; justify-content:center;
+  height:48px; align-items:center;
+}
+.vf-nav a{
+  color:var(--ink); letter-spacing:.08em; text-transform:uppercase; font-size:12px;
+  padding-bottom:6px; border-bottom:2px solid transparent;
+}
+.vf-nav a:hover{ border-bottom-color:var(--line); text-decoration:none }
+.vf-nav a.active{ border-bottom-color:var(--accent); }
+
+/* Ajustement container (header full-bleed) */
+.container{ padding-top:0 }
