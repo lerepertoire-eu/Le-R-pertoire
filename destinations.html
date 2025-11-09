@@ -5,18 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Destinations — Le Répertoire</title>
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/theme.js" defer></script>
 </head>
 <body>
   <div class="container">
     <header class="header">
       <div>
         <div class="brand">Le Répertoire</div>
-        <div class="sub">Destinations & lieux</div>
+        <div class="sub">Des séjours conçus comme des œuvres</div>
       </div>
       <nav class="nav">
         <a href="index.html">Accueil</a>
         <a href="destinations.html">Destinations</a>
-        <a href="admin/places_from_csv.html">Admin</a>
+        <a href="about.html">À propos</a>
+        <a href="methodo.html">Méthodo</a>
+        <a href="contact.html">Contact</a>
+        <span class="toggle" onclick="__lrToggleTheme()">◐</span>
       </nav>
     </header>
 
@@ -37,6 +41,18 @@
           <option value="ultra">Ultra</option>
         </select>
 
+        <select id="tagSelect" aria-label="Tag">
+          <option value="">Tous tags</option>
+          <option value="ultra_luxe">ultra_luxe</option>
+          <option value="smart_luxury">smart_luxury</option>
+          <option value="romantique">romantique</option>
+          <option value="teuf_vip">teuf_vip</option>
+          <option value="business">business</option>
+          <option value="nature">nature</option>
+          <option value="vue_wow">vue_wow</option>
+          <option value="ouvert_tard">ouvert_tard</option>
+        </select>
+
         <input id="q" type="search" placeholder="Recherche (nom, pitch, tags)" />
         <button class="btn primary" id="apply">Filtrer</button>
         <span class="badge" id="count">0 lieu</span>
@@ -45,9 +61,8 @@
       <div class="grid" id="cards"></div>
     </section>
 
-    <footer class="footer">© Le Répertoire</footer>
+    <footer class="footer">© 2025 Le Répertoire</footer>
   </div>
-
   <script src="assets/listing.js"></script>
 </body>
 </html>
