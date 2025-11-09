@@ -1,0 +1,384 @@
+import { writeFileSync, mkdirSync } from 'fs';
+import { Place } from './types';
+
+type Seed = {
+  places: Place[];
+};
+
+const seedData: Seed = {
+  places: [
+    {
+      name: 'La Verrière du Canal',
+      destination: 'Paris',
+      category: 'restaurant',
+      level_local: 'smart',
+      short_pitch:
+        'Bistronomique du 10e avec cuisine ouverte, carte courte et vins nature soignés, parfait pour un dîner détendu mais calibré.',
+      cases: ['date_night', 'after_work'],
+      formulas: ['smart_luxury', 'romantique'],
+      pro_tips: [
+        'Réserver pour 19h45 et demander la table près de la verrière pour le calme.',
+        'Plat signature : quasi de veau rôti à partager.',
+        'Arriver par le métro Jacques Bonsergent puis 4 minutes à pied.'
+      ],
+      budget_local: '€€ (menu 48€)',
+      vibe_meters: {
+        romance: 4,
+        fete: 2,
+        opulence: 2,
+        calme: 3,
+        valeur: 5
+      },
+      when_to_go: "Jeudi à samedi, premier service pour profiter de la lumière.",
+      access_booking:
+        "Réserver 5 jours à l'avance via email ; métro République ou Jacques Bonsergent.",
+      quality_scores: {
+        service: 4,
+        cadre: 3,
+        produit: 5,
+        public: 4,
+        fiabilite: 4,
+        signature: 4
+      },
+      dress_code: 'Casual chic'
+    },
+    {
+      name: 'Le Salon Concorde',
+      destination: 'Paris',
+      category: 'hotel',
+      level_local: 'core',
+      short_pitch:
+        'Boutique hôtel proche Madeleine avec service de conciergerie pointu et bar feutré, idéal business chic.',
+      cases: ['business', 'date_night'],
+      formulas: ['smart_luxury', 'business'],
+      pro_tips: [
+        'Demander une chambre côté cour pour éviter le trafic.',
+        'Cocktail signature au bar : le Concorde Fumé.',
+        "Accès direct ligne 14 depuis Saint-Lazare, prévoir 10 minutes de marche."
+      ],
+      budget_local: '€€€ (chambres 320-420€)',
+      vibe_meters: {
+        romance: 3,
+        fete: 1,
+        opulence: 4,
+        calme: 4,
+        valeur: 4
+      },
+      when_to_go: 'En semaine pour les rendez-vous et late check-out assuré.',
+      access_booking: 'Réserver 2 semaines avant pour les suites ; voiturier sur place.',
+      quality_scores: {
+        service: 5,
+        cadre: 4,
+        produit: 4,
+        public: 4,
+        fiabilite: 5,
+        signature: 4
+      },
+      dress_code: 'Smart casual'
+    },
+    {
+      name: 'Penthouse Rivoli',
+      destination: 'Paris',
+      category: 'bar_rooftop',
+      level_local: 'ultra',
+      short_pitch:
+        'Rooftop confidentiel vue Seine avec mixologie haute couture et DJ sets discrets.',
+      cases: ['celebration', 'date_night'],
+      formulas: ['ultra_luxe', 'vue_wow', 'teuf_vip'],
+      pro_tips: [
+        'Réserver le sofa panoramique via le concierge avant 20h.',
+        'Commander le martini infusé aux herbes du jardin.',
+        'Prévoir un manteau chic, vent en altitude.'
+      ],
+      budget_local: '€€€€ (cocktails 28-35€)',
+      vibe_meters: {
+        romance: 4,
+        fete: 4,
+        opulence: 5,
+        calme: 2,
+        valeur: 3
+      },
+      when_to_go: "Coucher de soleil d'avril à septembre ; dimanche pour ambiance plus calme.",
+      access_booking:
+        "Entrée par ascenseur privé rue de Rivoli ; confirmer 7 jours à l'avance via concierge.",
+      quality_scores: {
+        service: 5,
+        cadre: 5,
+        produit: 4,
+        public: 5,
+        fiabilite: 4,
+        signature: 5
+      },
+      dress_code: 'Tenue de soirée élégante'
+    },
+    {
+      name: 'Can Baladre',
+      destination: 'Ibiza',
+      category: 'restaurant',
+      level_local: 'smart',
+      short_pitch:
+        'Terrasse sous les pins à Santa Gertrudis, cuisine méditerranéenne fraîche et service chaleureux.',
+      cases: ['date_night', 'celebration'],
+      formulas: ['smart_luxury', 'nature'],
+      pro_tips: [
+        "Arriver avant le coucher de soleil pour l'apéro maison.",
+        "Réserver la table au fond près du mur en pierre pour l'intimité.",
+        'Commander le poisson du jour cuit au sel à partager.'
+      ],
+      budget_local: '€€ (plats 22-34€)',
+      vibe_meters: {
+        romance: 4,
+        fete: 2,
+        opulence: 3,
+        calme: 4,
+        valeur: 5
+      },
+      when_to_go: 'Mai à octobre, dîner 20h30 pour la brise légère.',
+      access_booking: 'Parking sur place ; réserver 4 jours avant en haute saison.',
+      quality_scores: {
+        service: 4,
+        cadre: 4,
+        produit: 4,
+        public: 4,
+        fiabilite: 4,
+        signature: 4
+      }
+    },
+    {
+      name: 'Casa Horizonte',
+      destination: 'Ibiza',
+      category: 'hotel',
+      level_local: 'core',
+      short_pitch:
+        'Villa contemporaine à Es Cubells avec vue mer, staff discret et piscine miroir.',
+      cases: ['celebration', 'business'],
+      formulas: ['smart_luxury', 'vue_wow', 'teuf_vip'],
+      pro_tips: [
+        'Bloquer le chef résident pour un dîner privé dès la confirmation.',
+        'Demander la suite master pour lever de soleil direct.',
+        "Accès optimal via chauffeur privé depuis l'aéroport (25 min)."
+      ],
+      budget_local: '€€€€ (à partir de 3200€/nuit)',
+      vibe_meters: {
+        romance: 3,
+        fete: 4,
+        opulence: 4,
+        calme: 3,
+        valeur: 4
+      },
+      when_to_go: 'Juin-septembre pour pool parties ; octobre pour retraites plus calmes.',
+      access_booking:
+        "Réserver 6 mois avant les semaines d'août ; coordinateur disponible 24/7.",
+      quality_scores: {
+        service: 5,
+        cadre: 5,
+        produit: 4,
+        public: 4,
+        fiabilite: 5,
+        signature: 4
+      },
+      hero_image_url: 'https://placeholder.local/casa-horizonte.jpg'
+    },
+    {
+      name: 'Lumen Club',
+      destination: 'Ibiza',
+      category: 'club',
+      level_local: 'ultra',
+      short_pitch:
+        'Club boutique à Marina Botafoch, sound system audiophile et line-up house sur-mesure.',
+      cases: ['teuf_vip', 'celebration'],
+      formulas: ['ultra_luxe', 'teuf_vip', 'ouvert_tard'],
+      pro_tips: [
+        'Arriver avant 1h pour éviter la file VIP.',
+        'Commander le champagne infusé aux agrumes maison.',
+        'Tables best : rangée centrale face au DJ booth.'
+      ],
+      budget_local: '€€€€ (tables 2500€+)',
+      vibe_meters: {
+        romance: 2,
+        fete: 5,
+        opulence: 5,
+        calme: 1,
+        valeur: 3
+      },
+      when_to_go: 'Jeudi à samedi, résidence du DJ invité ; closing parties en septembre.',
+      access_booking:
+        'Concierge dédié par messagerie, confirmer 10 jours avant pour table ; voiturier sur Marina.',
+      quality_scores: {
+        service: 5,
+        cadre: 5,
+        produit: 4,
+        public: 5,
+        fiabilite: 4,
+        signature: 5
+      },
+      dress_code: 'Club chic, pas de baskets blanches'
+    },
+    {
+      name: 'Chalet Edelweiss',
+      destination: 'Zermatt',
+      category: 'hotel',
+      level_local: 'smart',
+      short_pitch:
+        'Boutique lodge près du centre, chambres cosy, petit-déj gourmand et sauna intimiste.',
+      cases: ['date_night', 'after_work'],
+      formulas: ['smart_luxury', 'nature'],
+      pro_tips: [
+        'Réserver la suite avec balcon sud pour la vue Cervin.',
+        'Prévoir transfert en taxi électrique depuis la gare (8 min).',
+        'Sauna privatisable après 19h sur demande.'
+      ],
+      budget_local: 'CHF CHF (280-360 CHF/nuit)',
+      vibe_meters: {
+        romance: 4,
+        fete: 1,
+        opulence: 3,
+        calme: 4,
+        valeur: 5
+      },
+      when_to_go: 'Janvier-mars pour ski prime ; septembre pour rando luxe.',
+      access_booking:
+        'Réserver 3 semaines avant haute saison ; navette électrique sur demande.',
+      quality_scores: {
+        service: 4,
+        cadre: 4,
+        produit: 4,
+        public: 4,
+        fiabilite: 4,
+        signature: 3
+      }
+    },
+    {
+      name: 'Heliski Glacier Run',
+      destination: 'Zermatt',
+      category: 'experience',
+      level_local: 'core',
+      short_pitch:
+        'Sortie héliski privée avec guide UIAGM, terrain glacier et descente sur poudreuse garantie.',
+      cases: ['celebration', 'business'],
+      formulas: ['nature', 'ultra_luxe'],
+      pro_tips: [
+        "Bloquer le slot 48h à l'avance pour fenêtre météo.",
+        'Prévoir échauffement ski à 8h sur Sunnegga.',
+        'Inclus : petit-déjeuner énergétique à la base hélico.'
+      ],
+      budget_local: 'CHF CHFCHF (4800 CHF/groupe)',
+      vibe_meters: {
+        romance: 2,
+        fete: 3,
+        opulence: 4,
+        calme: 2,
+        valeur: 4
+      },
+      when_to_go: 'Février-avril, slots matinaux pour meilleure neige.',
+      access_booking:
+        "Confirmation 3 semaines avant auprès du guide ; transfert en taxi électrique depuis l'hôtel.",
+      quality_scores: {
+        service: 5,
+        cadre: 5,
+        produit: 5,
+        public: 4,
+        fiabilite: 4,
+        signature: 5
+      },
+      dress_code: 'Tenue ski freeride technique'
+    },
+    {
+      name: 'La Table du Glacier',
+      destination: 'Zermatt',
+      category: 'restaurant',
+      level_local: 'ultra',
+      short_pitch:
+        'Table alpine gastronomique signée chef étoilé, menu dégustation terroir et cave rare.',
+      cases: ['celebration', 'date_night'],
+      formulas: ['ultra_luxe', 'romantique'],
+      pro_tips: [
+        "Sélectionner l'accord vins alpins pour découvrir les crus valaisans.",
+        'Table idéale : coin baie vitrée avec vue Cervin.',
+        'Réserver 1 mois à l'avance pour le service du samedi.'
+      ],
+      budget_local: 'CHF CHFCHF (menu 245 CHF)',
+      vibe_meters: {
+        romance: 5,
+        fete: 2,
+        opulence: 5,
+        calme: 3,
+        valeur: 4
+      },
+      when_to_go: 'Hiver pour ambiance feu de bois ; été pour coucher de soleil tardif.',
+      access_booking:
+        "Montée en funiculaire privé depuis le centre, prévoir 15 minutes ; confirmation par email 4 semaines avant.",
+      quality_scores: {
+        service: 5,
+        cadre: 5,
+        produit: 5,
+        public: 4,
+        fiabilite: 5,
+        signature: 5
+      },
+      dress_code: 'Smart chic, veste recommandée'
+    }
+  ]
+};
+
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const generateTableRows = (places: Place[]): string =>
+  places
+    .map((place) => {
+      const formulas = place.formulas.join(', ');
+      const firstTip = place.pro_tips[0] ?? '';
+      const serviceScore = place.quality_scores.service;
+      return `        <tr>\n          <td>${escapeHtml(place.destination)}</td>\n          <td>${escapeHtml(place.name)}</td>\n          <td>${escapeHtml(place.category)}</td>\n          <td>${escapeHtml(place.level_local)}</td>\n          <td>${escapeHtml(place.budget_local)}</td>\n          <td>${escapeHtml(formulas)}</td>\n          <td>${escapeHtml(firstTip)}</td>\n          <td>${escapeHtml(serviceScore.toString())}</td>\n        </tr>`;
+    })
+    .join('\n');
+
+const renderHtml = (places: Place[]): string => `<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Le Répertoire — Admin (lecture seule)</title>
+  </head>
+  <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; background-color: #f9f9f9; margin: 0; padding: 32px;">
+    <main style="max-width: 1100px; margin: 0 auto; background: #ffffff; border-radius: 12px; padding: 32px; box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);">
+      <h1 style="margin-top: 0; font-size: 28px; color: #111827;">Le Répertoire — Admin (lecture seule)</h1>
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; font-size: 15px;">
+          <thead>
+            <tr style="background-color: #f3f4f6; text-align: left;">
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Destination</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Nom</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Catégorie</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Niveau local</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Budget</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Tags / Formules</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Premier pro-tip</th>
+              <th style="padding: 12px 16px; border-bottom: 2px solid #e5e7eb;">Service</th>
+            </tr>
+          </thead>
+          <tbody>
+${generateTableRows(places)}
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>`;
+
+const ensureAdminDirectory = () => {
+  mkdirSync('admin', { recursive: true });
+};
+
+const main = () => {
+  ensureAdminDirectory();
+  const html = renderHtml(seedData.places);
+  writeFileSync('admin/places.html', html, 'utf-8');
+};
+
+main();
