@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <symbol id="icon-moon" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M21 12.79A9 9 0 0 1 11.21 3 7 7 0 1 0 21 12.79z"/>
+  </symbol>
+  <symbol id="icon-arrow" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13 5l7 7-7 7v-4H4v-6h9V5z"/>
+  </symbol>
+  <symbol id="icon-star" viewBox="0 0 24 24">
+    <path fill="currentColor" d="m12 17.27 6.18 3.73-1.64-7.03L21 9.24l-7.19-.61L12 2 10.19 8.63 3 9.24l4.46 4.73-1.64 7.03L12 17.27z"/>
+  </symbol>
+</svg>
