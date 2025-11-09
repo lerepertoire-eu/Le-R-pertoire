@@ -112,3 +112,12 @@ select,input[type="search"],.btn{
 /* Icon button (nav) */
 .icon-btn{display:inline-flex;align-items:center;gap:6px}
 .icon{width:18px;height:18px;display:inline-block}
+/* === Header sticky + logo === */
+.header{position:sticky; top:0; z-index:50; backdrop-filter:saturate(140%) blur(6px); background:color-mix(in oklab, var(--bg) 85%, transparent); border-bottom:1px solid var(--line)}
+.brand-row{display:flex;align-items:center;gap:10px}
+.logo{
+  width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:8px;font-family:"Playfair Display",serif;font-weight:700;
+  background:var(--card); color:var(--ink); letter-spacing:.5px;
+}
+.nav a.active{color:var(--ink); font-weight:600}
