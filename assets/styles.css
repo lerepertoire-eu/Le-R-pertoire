@@ -215,3 +215,5 @@ a:hover{text-decoration:underline}
 .stars{display:inline-flex;gap:2px;vertical-align:middle}
 .star{width:14px;height:14px;color:var(--accent-2)}
 .star svg{width:14px;height:14px}
+/* Désactiver tout filigrane logo dans le hero */
+.hero .hero-mark{ display:none !important; }
