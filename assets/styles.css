@@ -297,33 +297,48 @@ a:hover{text-decoration:underline}
   display: inline-block;
 }
 
-/* Bande sombre (section 4) */
+/* Bande sombre (section 4) – version plus lisible */
 .section-band {
-  background: #171310;
-  color: #f7f3ec;
+  background: #221912; /* un brun foncé, pas totalement noir */
+  color: #f9f2e8;
   border-radius: 24px;
-  padding: 3rem clamp(1.5rem, 3vw, 3rem);
+  padding: 2.75rem clamp(1.5rem, 3vw, 3rem);
   margin-top: 2.5rem;
 }
 
 .section-band .section-head .kicker {
-  color: #f0e4d5;
+  color: #f3e2cf;
 }
 
 .section-band .section-head h2 {
   color: #ffffff;
 }
 
-.section-band .card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 18px;
+/* Aligner bien les deux cartes et les rendre plus claires */
+.section-band .grid {
+  align-items: stretch;
+  gap: 2rem;
 }
 
+.section-band .card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 18px;
+  padding: 1.75rem;
+}
+
+/* Forcer une couleur de texte bien lisible dans la bande sombre */
+.section-band h3,
+.section-band p,
+.section-band li {
+  color: #f9f2e8;
+}
+
+/* Bouton clair au centre */
 .section-band a.cta,
 .section-band a.cta.emph {
-  background: #f7f3ec;
-  color: #171310;
+  background: #f9f2e8;
+  color: #221912;
 }
 
 .section-band a.cta:hover,
