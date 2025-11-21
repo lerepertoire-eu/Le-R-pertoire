@@ -235,3 +235,98 @@ a:hover{text-decoration:underline}
 .section .center .cta {
   display: inline-block;
 }
+/* ===== Layout custom home ===== */
+
+/* Section 1 : split gauche/droite */
+.section-split-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  gap: 2.5rem;
+  align-items: flex-start;
+}
+
+.section-split-aside {
+  align-self: stretch;
+}
+
+.highlight-box {
+  background: #f4ebe0;
+  border-radius: 16px;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.highlight-note {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.list-tight li + li {
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 900px) {
+  .section-split-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Section 2 : 3 colonnes */
+.grid.grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-grid .card {
+  height: 100%;
+}
+
+@media (max-width: 900px) {
+  .grid.grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Centrage générique */
+.section .center {
+  text-align: center;
+}
+
+.section .center .cta {
+  display: inline-block;
+}
+
+/* Bande sombre (section 4) */
+.section-band {
+  background: #171310;
+  color: #f7f3ec;
+  border-radius: 24px;
+  padding: 3rem clamp(1.5rem, 3vw, 3rem);
+  margin-top: 2.5rem;
+}
+
+.section-band .section-head .kicker {
+  color: #f0e4d5;
+}
+
+.section-band .section-head h2 {
+  color: #ffffff;
+}
+
+.section-band .card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 18px;
+}
+
+.section-band a.cta,
+.section-band a.cta.emph {
+  background: #f7f3ec;
+  color: #171310;
+}
+
+.section-band a.cta:hover,
+.section-band a.cta.emph:hover {
+  background: #ffffff;
+}
