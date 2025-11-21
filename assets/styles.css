@@ -296,52 +296,25 @@ a:hover{text-decoration:underline}
 .section .center .cta {
   display: inline-block;
 }
-
-/* Bande sombre (section 4) – version plus lisible */
-.section-band {
-  background: #221912; /* un brun foncé, pas totalement noir */
-  color: #f9f2e8;
-  border-radius: 24px;
-  padding: 2.75rem clamp(1.5rem, 3vw, 3rem);
-  margin-top: 2.5rem;
-}
-
-.section-band .section-head .kicker {
-  color: #f3e2cf;
-}
-
-.section-band .section-head h2 {
-  color: #ffffff;
-}
-
-/* Aligner bien les deux cartes et les rendre plus claires */
-.section-band .grid {
+/* Section 4 : avis / crédibilité */
+.section-trust .grid {
   align-items: stretch;
   gap: 2rem;
 }
 
-.section-band .card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.22);
+.section-trust .card {
   border-radius: 18px;
-  padding: 1.75rem;
+  box-shadow: 0 10px 30px rgba(15, 12, 6, 0.06); /* petite ombre type carte avis */
 }
 
-/* Forcer une couleur de texte bien lisible dans la bande sombre */
-.section-band h3,
-.section-band p,
-.section-band li {
-  color: #f9f2e8;
+.section-trust h3 {
+  margin-bottom: 0.75rem;
 }
 
-/* Bouton clair au centre */
-.section-band a.cta,
-.section-band a.cta.emph {
-  background: #f9f2e8;
-  color: #221912;
+.section-trust em {
+  font-style: italic;
 }
 
-.section-band a.cta:hover,
-.section-band a.cta.emph:hover {
-  background: #ffffff;
+.section-trust .list {
+  margin-top: 0.5rem;
 }
