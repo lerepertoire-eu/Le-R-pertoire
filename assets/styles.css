@@ -296,39 +296,97 @@ a:hover{text-decoration:underline}
 .section .center .cta {
   display: inline-block;
 }
+
 /* Section 4 : avis / crédibilité */
 .section-trust {
   margin-top: 3rem;
 }
 
-/* grille avec un vrai espace entre les cartes */
-.section-trust .grid {
-  align-items: stretch;
-  gap: 2rem;
-}
-
-/* cartes bien visibles */
-.section-trust .card {
-  background: #ffffff; /* fond plus clair que la section */
+/* blocs avis / expertise */
+.section-trust .trust-block {
+  background: #ffffff; /* plus clair que le fond général */
   border-radius: 20px;
   border: 1px solid #e2d6c5;
   box-shadow: 0 14px 35px rgba(15, 12, 6, 0.06);
   padding: 1.75rem 1.75rem 1.5rem;
+  margin-top: 1.75rem;
 }
 
-/* titre d'avis un peu plus marqué */
-.section-trust h3 {
-  margin-bottom: 0.75rem;
+/* petit label en haut du bloc */
+.section-trust .trust-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #8a6b46;
+  margin-bottom: 1rem;
 }
 
-/* texte des témoignages en vrai italique, bien lisible */
-.section-trust em {
-  font-style: italic;
-  display: block;
-  margin-bottom: 0.75rem;
+/* contenu interne des blocs */
+.section-trust .trust-content {
+  display: grid;
+  gap: 1.25rem;
 }
 
-/* liste plus compacte */
-.section-trust .list {
+/* Avis : 2 cartes côte à côte sur desktop */
+.section-trust .trust-reviews .trust-content {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .section-trust .trust-reviews .trust-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Carte d'avis */
+.trust-review {
+  border-radius: 16px;
+  border: 1px solid #f0e4d5;
+  padding: 1.25rem;
+}
+
+.trust-review-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.trust-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #171310;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.trust-name {
+  font-weight: 600;
+}
+
+.trust-stars {
+  font-size: 0.9rem;
+  color: #e09a2d;
+}
+
+.trust-review-text {
+  font-size: 0.95rem;
   margin-top: 0.5rem;
+}
+
+.trust-capsule {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
+
+/* Expertise : on garde une seule colonne avec liste */
+.trust-list {
+  margin-top: 0.25rem;
 }
